@@ -157,6 +157,6 @@ We suffer together, we grow together.
 
 🔥 **Day 2** – March 10, 2024
 
-> "Easy wins or deserved wins." – Her
+> "Easy wins or deserved wins." – My Princess
 
 > Author: "kaizen_dragon"
