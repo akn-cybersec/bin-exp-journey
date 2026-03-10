@@ -122,8 +122,8 @@ What this challenge taught me:
 
 | Day | Date | Challenges Solved | Techniques Learned |
 |-----|------|-------------------|---------------------|
-| 1 | 2024-03-09 | 1 | Basic heap overflow |
-| 2 | 2024-03-10 | 4 | Heap overflows, return address control |
+| 1 | 2026-03-09 | 1 | Basic heap overflow |
+| 2 | 2026-03-10 | 4 | Heap overflows, return address control |
 | 3 | ... | ... | ... |
 
 > Updated regularly as I solve more.
