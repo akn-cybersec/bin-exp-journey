@@ -146,6 +146,7 @@ We suffer together, we grow together.
 
 - GitHub: [@akn-cybersec](https://github.com/akn-cybersec)
 - Email: fict.0501@gmail.com
+- LinkedIn: [Muhammad Abdullah Khan](https://www.linkedin.com/in/muhammad-abdullah-khan-841465384/)
 
 ---
 
