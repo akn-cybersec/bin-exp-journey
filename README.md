@@ -160,4 +160,4 @@ We suffer together, we grow together.
 
 > "Easy wins or deserved wins." – My Princess
 
-> Author: "kaizen_dragon"
+> Author: kaizen_dragon
