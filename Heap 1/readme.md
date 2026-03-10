@@ -1,4 +1,4 @@
-# Buffer Overflow 2
+# Heap 1
 
 **Platform:** picoCTF  
 **Technique:** Heap Overflow  
