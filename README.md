@@ -124,7 +124,7 @@ What this challenge taught me:
 |-----|------|-------------------|---------------------|
 | 1 | 2026-03-09 | 1 | Basic heap overflow |
 | 2 | 2026-03-10 | 3 | Heap overflows, return address control |
-| 3 | ... | ... | ... |
+| 3 | 2026-03-11 | 3 | Format String, offset calculation |
 
 > Updated regularly as I solve more.
 
@@ -156,7 +156,7 @@ We suffer together, we grow together.
 
 ## 🏆 Current Streak
 
-🔥 **Day 2** – March 10, 2026
+🔥 **Day 3** – March 11, 2026
 
 > "Trust The Process!" – My Princess
 
