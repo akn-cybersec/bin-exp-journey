@@ -36,7 +36,7 @@ int main(){
     return 0;
 }
 ```
-This generates payloads like |1=%1$p|2=%2$p|3=%3$p... to leak multiple stack positions in one go.
+This generates payloads like |1=%1$p|2=%2$p|3=%3$p... to leak multiple stack positions in one go. I wrote that, inspired by Ali Taki's fmt-generator, his is the best, but mine also works (for me atleast).
 
 Step 2: Local Testing with Fake Flag
 Before attacking the remote, I tested locally with a fake flag file to understand the stack layout. This revealed:
