@@ -7,6 +7,7 @@
 ## Challenge Description
 
 A binary with **PIE (Position Independent Executable)** enabled and a format string vulnerability. No convenient leak this time — we have to find it ourselves.
+Try to solve this one on your own first, cuz it made me learn a lot. Also, [Ali Taki's Blog](https://www.theflash2k.me/blog/ctf-techs/fsb-guide#what-is-a-format-string), read it it'll help a lot.
 
 ## Vulnerability
 
