@@ -125,6 +125,7 @@ What this challenge taught me:
 | 1 | 2026-03-09 | 1 | Basic heap overflow |
 | 2 | 2026-03-10 | 3 | Heap overflows, return address control |
 | 3 | 2026-03-11 | 3 | Format String, offset calculation |
+| 4 | 2026-03-12 | 2 | Format string leaks, PIE bypass, stack analysis, custom tooling |
 
 > Updated regularly as I solve more.
 
