@@ -1,4 +1,4 @@
-# Input Injection 
+# Input Injection/Buffer Overflow
 
 **Platform:** picoCTF  
 **Technique:** Buffer Overflow / Command Injection  
