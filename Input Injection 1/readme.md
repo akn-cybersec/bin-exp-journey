@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A simple buffer overflow where the program takes a name input and likely passes it directly to `system()` or a similar function. The goal is to overflow the buffer and inject a command that reads the flag.
+A simple buffer overflow where the program takes a name input and likely passes it directly to `system()` or a similar function. The goal is to overflow the buffer and inject a command that reads the flag. To be very honest, one of the easiest challenges to ever exit. I'm damn sure if you just pay a very bit attention, even if 1% you can crack this one with ease and you don't need any tutorial or ready made script like this to solve it.
 
 ## Vulnerability
 
