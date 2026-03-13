@@ -1,4 +1,4 @@
-# Username to Shell
+# Username to Shell/Input Injection
 
 **Platform:** picoCTF  
 **Technique:** Buffer Overflow / Command Injection  
