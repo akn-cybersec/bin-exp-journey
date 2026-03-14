@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A format string vulnerability where the program helpfully leaks a libc address (`setvbuf`) at the start. The goal is to overwrite the GOT entry of `puts` with the address of `system`, so that any subsequent call to `puts` actually executes `system`. I liked this one.
+A format string vulnerability where the program helpfully leaks a libc address (`setvbuf`) at the start. The goal is to overwrite the GOT entry of `puts` with the address of `system`, so that any subsequent call to `puts` actually executes `system`. I liked this one. My first time doing ret2libc and GOT. I learnt a lot, I hope you also do.
 
 ## Vulnerability
 
