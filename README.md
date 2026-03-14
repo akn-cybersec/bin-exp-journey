@@ -127,6 +127,7 @@ What this challenge taught me:
 | 3 | 2026-03-11 | 3 | Format String, offset calculation |
 | 4 | 2026-03-12 | 2 | Format string leaks, PIE bypass, stack analysis, custom tooling |
 | 5 | 2026-03013 | 2 | Input Injection, Buffer Overflow, username to shell |
+| 5 | 2026-03013 | 2 | Input Injection, Buffer Overflow, username to shell |
 
 > Updated regularly as I solve more.
 
