@@ -128,6 +128,7 @@ What this challenge taught me:
 | 4 | 2026-03-12 | 2 | Format string leaks, PIE bypass, stack analysis, custom tooling |
 | 5 | 2026-03-13 | 2 | Input Injection, Buffer Overflow, username to shell |
 | 6 | 2026-03-14 | 1 | Format String, ret2libc |
+| 6 | 2026-03-15 | 2 | Buffer overflow |
 
 > Updated regularly as I solve more.
 
