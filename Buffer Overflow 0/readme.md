@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A basic buffer overflow vulnerability where the program asks for input and likely copies it into a small buffer without bounds checking. An overflow causes a segmentation fault, which prints the flag.
+A basic buffer overflow vulnerability where the program asks for input and likely copies it into a small buffer without bounds checking. An overflow causes a segmentation fault, which prints the flag. To be very honest, it was easy, and you must be thinking why easy? Cuz, I'd say, every solve matter, not in a flashy way, but in reality, every step is actually us moving toward the goal, no matter how small the step is, it takes us closer to the destination even if 0.1%.
 
 ## Vulnerability
 
