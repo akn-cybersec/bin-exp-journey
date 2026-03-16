@@ -2,7 +2,7 @@
 
 > One locked year. Infinite growth.
 
-Welcome to my personal journey through the world of binary exploitation.  
+> Welcome to my personal journey through the world of binary exploitation.  
 This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way. I don't just post the flashy solves, but also the easy ones, cuz, not gonna lie, there was a time, when easy today felt impossible. There are days when I can't solve any, when I'm stuck on one challenge for hours, but it doesn't mean, I can't solve. Learning is a continuous, and we can't learn until we are humbled, such days humble me and make me learn more.
 ---
 
