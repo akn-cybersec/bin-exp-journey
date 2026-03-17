@@ -129,6 +129,7 @@ What this challenge taught me:
 | 6 | 2026-03-14 | 1 | Format String, ret2libc |
 | 7 | 2026-03-15 | 2 | Buffer overflow |
 | 8 | 2026-03-16 | 0 | Worked on echo valley, tried to solve it, but kept failing |
+| 9 | 2026-03-17 | 0 | Worked on echo valley and failed again, went back to basic lectures of assembly and python for better understanding and will be back to it tomorrow |
 
 > Updated regularly as I solve more.
 
