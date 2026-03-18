@@ -1,4 +1,4 @@
-# buffer overflow 3
+# Buffer overflow 3
 
 **Platform:** picoCTF  
 **Technique:** 32-bit ret2win with Arguments  
