@@ -6,7 +6,8 @@
 
 ## Challenge Description
 
-A 32-bit buffer overflow where the win function requires two specific arguments. Unlike 64-bit where arguments are passed in registers, 32-bit programs expect arguments on the stack **after** the return address. For buffer overflow challenges, especially when Partial RELRO is enabled, I always use ```nm <binary> | grep <function>``` to quickly find function addresses. It's fast, simple, and gives you exactly what you need without opening Ghidra or GDB. For example, ```nm ./vuln | grep win``` returns something like 08049296 T win, which you can directly use in your exploit. This works perfectly for non-PIE binaries where addresses are static, just grab the address, calculate your offset, and overwrite the return address. It's become my go-to method because it saves time and keeps the focus on exploitation rather than tooling.
+A 32-bit buffer overflow where the win function requires two specific arguments. Unlike 64-bit where arguments are passed in registers, 32-bit programs expect arguments on the stack **after** the return address. I used to think buffer overflows were magic. Honestly at this stage, buffer overflow feels fun to me. But I remember the time when I spent hours on my first ever overflow. We grow, we indeed grow once we take learning seriously, we grow a lot.
+For buffer overflow challenges, especially when Partial RELRO is enabled, I always use ```nm <binary> | grep <function>``` to quickly find function addresses. It's fast, simple, and gives you exactly what you need without opening Ghidra or GDB. For example, ```nm ./vuln | grep win``` returns something like 08049296 T win, which you can directly use in your exploit. This works perfectly for non-PIE binaries where addresses are static, just grab the address, calculate your offset, and overwrite the return address. It's become my go-to method because it saves time and keeps the focus on exploitation rather than tooling.
 
 
 
