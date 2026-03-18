@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A 32-bit buffer overflow where the win function requires two specific arguments. Unlike 64-bit where arguments are passed in registers, 32-bit programs expect arguments on the stack **after** the return address.
+A 32-bit buffer overflow where the win function requires two specific arguments. Unlike 64-bit where arguments are passed in registers, 32-bit programs expect arguments on the stack **after** the return address. A suggestion: For buffer overflow especially with partial relro, the best tool is: ```nm <binary> | grep <funtion>``` to get the address of funtion, and then overwrite. 
 
 ## Vulnerability
 
