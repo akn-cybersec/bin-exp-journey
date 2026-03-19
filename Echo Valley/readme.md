@@ -5,7 +5,7 @@
 **Difficulty:** Hard  
 
 ## Challenge Description
-
+I was stuch on this for 2 days. I went back to basics, learnt again, and then came back again and solved it.
 A format string vulnerability in a 64-bit binary with **all protections enabled**:
 - Full RELRO
 - Stack Canary
