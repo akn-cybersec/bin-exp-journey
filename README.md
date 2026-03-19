@@ -131,6 +131,7 @@ What this challenge taught me:
 | 8 | 2026-03-16 | 0 | Worked on echo valley, tried to solve it, but kept failing |
 | 9 | 2026-03-17 | 0 | Worked on echo valley and failed again, went back to basic lectures of assembly and python for better understanding and will be back to it tomorrow |
 | 10 | 2026-03-18 | 1 | 32-bit vs 64-bit calling conventions, stack argument placement, and precise offset control for ret2win with multiple arguments |
+| 11 | 2026-03-19 | 2 | Format string multi-stage exploitation with PIE and stack leaks, return address overwrite using short writes, and integer overflow via signed wraparound with max value + 1. |
 
 > Updated regularly as I solve more.
 
