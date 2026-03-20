@@ -132,6 +132,7 @@ What this challenge taught me:
 | 9 | 2026-03-17 | 0 | Worked on echo valley and failed again, went back to basic lectures of assembly and python for better understanding and will be back to it tomorrow |
 | 10 | 2026-03-18 | 1 | 32-bit vs 64-bit calling conventions, stack argument placement, and precise offset control for ret2win with multiple arguments |
 | 11 | 2026-03-19 | 2 | Format string multi-stage exploitation with PIE and stack leaks, return address overwrite using short writes, and integer overflow via signed wraparound with max value + 1. |
+| 12 | 2026-03-20 | 2 | Restricted shell escape via Python, system binary location discovery with find, and PATH hijacking to replace md5sum with a custom script |
 
 > Updated regularly as I solve more.
 
