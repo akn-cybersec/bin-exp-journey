@@ -155,6 +155,7 @@ We suffer together, we grow together.
 - GitHub: [@akn-cybersec](https://github.com/akn-cybersec)
 - Email: fict.0501@gmail.com
 - LinkedIn: [Muhammad Abdullah Khan](https://www.linkedin.com/in/muhammad-abdullah-khan-841465384/)
+- Discord: kaizen_drag0n
 
 ---
 
@@ -164,7 +165,7 @@ We suffer together, we grow together.
 
 ## 🏆 Current Streak
 
-🔥 **Day 12** – March 19, 2026
+🔥 **Day 12** – March 20, 2026
 
 > "Trust The Process!" – My Princess
 
