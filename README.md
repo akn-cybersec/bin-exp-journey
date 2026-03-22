@@ -134,7 +134,7 @@ What this challenge taught me:
 | 11 | 2026-03-19 | 2 | Format string multi-stage exploitation with PIE and stack leaks, return address overwrite using short writes, and integer overflow via signed wraparound with max value + 1. |
 | 12 | 2026-03-20 | 2 | Restricted shell escape via Python, system binary location discovery with find, and PATH hijacking to replace md5sum with a custom script |
 | 13 | 2026-03-21 | 3 | ret2win with stack alignment using a single `ret` ROP gadget to fix 64-bit calling convention requirements |
-
+| 14 | 2026-03-22 | 3 | Format string leak + custom C++ generator/decoder, logic exploit with strstr, direct ret2win, and expanding my reusable toolkit |
 > Updated regularly as I solve more.
 
 ---
