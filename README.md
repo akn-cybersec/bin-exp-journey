@@ -135,6 +135,7 @@ What this challenge taught me:
 | 12 | 2026-03-20 | 2 | Restricted shell escape via Python, system binary location discovery with find, and PATH hijacking to replace md5sum with a custom script |
 | 13 | 2026-03-21 | 3 | ret2win with stack alignment using a single `ret` ROP gadget to fix 64-bit calling convention requirements |
 | 14 | 2026-03-22 | 3 | Format string leak + custom C++ generator/decoder, logic exploit with strstr, direct ret2win, and expanding my reusable toolkit |
+| 15 | 2026-03-15 | 3 | Command injection via environment variable chaining, local variable overwrite with GDB offset calculation, and 64-bit shellcode injection using leaked buffer address with NOP sled |
 > Updated regularly as I solve more.
 
 ---
