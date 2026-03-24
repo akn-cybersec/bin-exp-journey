@@ -4,13 +4,14 @@
 
 >This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way.
 
-I don't just post the flashy solves; I include the "easy" ones too. Not gonna lie — there was a time when what feels easy today felt impossible. There are days when I can't solve anything, when I'm stuck on a single challenge for hours, but that doesn't mean I can't solve it.
+I don't just post the flashy solves; I include the "easy" ones too. Not gonna lie, there was a time when what feels easy today felt impossible. There are days when I can't solve anything, when I'm stuck on a single challenge for hours, but that doesn't mean I can't solve it.
 
 **My Philosophy:**
 
 - **Continuous Learning:** We can't truly learn until we are humbled. Those "stuck" days humble me and push me to learn more.
 - **Stay Humble:** Keep learning, and we'll end up where we want to be. Even if we don't, we'll at least have a great story to tell.
-- **The Deep Dive:** With binaries, the deeper you go, the more fun they get. Don't just do this as a career skill — it's a legendary hobby to have.
+- **The Deep Dive:** With binaries, the deeper you go, the more fun they get. Don't just do this as a career skill, it's a legendary hobby to have.
+  In the end, I'll say, don't just learn, just have fun and do what excites you.
 
 If this journey helps you on your own CTF path, a ⭐ is much appreciated!
 ---
