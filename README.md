@@ -2,9 +2,17 @@
 
 > One locked year. Infinite growth.
 
-> Welcome to my personal journey through the world of binary exploitation.  
-This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way. I don't just post the flashy solves, but also the easy ones, cuz, not gonna lie, there was a time, when easy today felt impossible. There are days when I can't solve any, when I'm stuck on one challenge for hours, but it doesn't mean, I can't solve. Learning is a continuous, and we can't learn until we are humbled, such days humble me and make me learn more. Just stay humble and keep learning, we might end up where we wanted to, even if not we'll at least have a story to tell. About binaries I know one thing, the deeper you go the more fun they get. Don't just do them for like a life building skill, it's a great hobby to have.
-> If this journey helps you in your own CTF path, a ⭐ is much appreciated!
+>This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way.
+
+I don't just post the flashy solves; I include the "easy" ones too. Not gonna lie — there was a time when what feels easy today felt impossible. There are days when I can't solve anything, when I'm stuck on a single challenge for hours, but that doesn't mean I can't solve it.
+
+**My Philosophy:**
+
+- **Continuous Learning:** We can't truly learn until we are humbled. Those "stuck" days humble me and push me to learn more.
+- **Stay Humble:** Keep learning, and we'll end up where we want to be. Even if we don't, we'll at least have a great story to tell.
+- **The Deep Dive:** With binaries, the deeper you go, the more fun they get. Don't just do this as a career skill — it's a legendary hobby to have.
+
+If this journey helps you on your own CTF path, a ⭐ is much appreciated!
 ---
 
 ## 📌 Table of Contents
