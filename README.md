@@ -3,7 +3,7 @@
 > One locked year. Infinite growth.
 
 > Welcome to my personal journey through the world of binary exploitation.  
-This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way. I don't just post the flashy solves, but also the easy ones, cuz, not gonna lie, there was a time, when easy today felt impossible. There are days when I can't solve any, when I'm stuck on one challenge for hours, but it doesn't mean, I can't solve. Learning is a continuous, and we can't learn until we are humbled, such days humble me and make me learn more. Just stay humble and keep learning, we might end up where we wanted to, even if not we'll at least have a story to tell.
+This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way. I don't just post the flashy solves, but also the easy ones, cuz, not gonna lie, there was a time, when easy today felt impossible. There are days when I can't solve any, when I'm stuck on one challenge for hours, but it doesn't mean, I can't solve. Learning is a continuous, and we can't learn until we are humbled, such days humble me and make me learn more. Just stay humble and keep learning, we might end up where we wanted to, even if not we'll at least have a story to tell. About binaries I know one thing, the deeper you go the more fun they get. Don't just do them for like a life building skill, it's a great hobby to have.
 > If this journey helps you in your own CTF path, a ⭐ is much appreciated!
 ---
 
