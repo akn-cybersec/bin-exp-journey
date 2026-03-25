@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A format string vulnerability where the flag is stored on the stack in hex format. We leak stack values and decode them using a custom C++ hex decoder. And You can find that decoder in my repo. Again, it's completely optional to use that decoder, you can simple decode it with python or manually yourself. I didn't do that in my python, cuz I feel like, my C++ is kind of better than my python.
+A format string vulnerability where the flag is stored on the stack in hex format. We leak stack values and decode them using a custom C++ hex decoder. And You can find that decoder in my repo. Again, it's completely optional to use that decoder, you can simple decode it with python or manually yourself. I didn't do that in my python, cuz I feel like, my C++ is kind of better than my python. Again, it's just what I like to do, you can have your own preference. Tools and scripts are completely optional, what matters is: FLAG!, just use the thing you like, but get that flag.
 
 ## Vulnerability
 
