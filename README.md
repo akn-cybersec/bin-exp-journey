@@ -11,7 +11,7 @@ I don't just post the flashy solves; I include the "easy" ones too. Not gonna li
 - **Continuous Learning:** We can't truly learn until we are humbled. Those "stuck" days humble me and push me to learn more.
 - **Stay Humble:** Keep learning, and we'll end up where we want to be. Even if we don't, we'll at least have a great story to tell.
 - **The Deep Dive:** With binaries, the deeper you go, the more fun they get. Don't just do this as a career skill, it's a legendary hobby to have. In the end, I'll say, don't just learn, just have fun and do what excites you.
-There's  time when quitting seems like the only option, when I'm stuck and just can't solve it, quitting feels like the only way out, but it's not. Quitting is just an illusion of win, while win is a win, win is doing what forces you to quit, win is doing what can't be done. Win is doing what feels impossible.
+- There's  time when quitting seems like the only option, when I'm stuck and just can't solve it, quitting feels like the only way out, but it's not. Quitting is just an illusion of win, while win is a win, win is doing what forces you to quit, win is doing what can't be done. Win is doing what feels impossible.
 
 >If this journey helps you on your own CTF path, a ⭐ is much appreciated!
 ---
