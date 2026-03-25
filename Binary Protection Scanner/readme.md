@@ -1,6 +1,6 @@
 # Binary Protection Scanner
 
-A C++ tool that scans ELF binaries and displays security protections (PIE, canary, NX, RELRO) with exploitation path suggestions.
+A C++ tool that scans ELF binaries and displays security protections (PIE, canary, NX, RELRO) with exploitation path suggestions. It's just a tool, I made it cuz I was learning the behavior of elf, and trying to understand better. My way of understanding complex things is by doing projects in it, and it's one of that. I made this just to learn binaries and how to play with them. It's completely optional. The only best thing which it gives is: It doesn't just gives the checksec, it also suggests some methods to get flag and that. It's good for beginners, but once you are beyone the beginner line, use 'checksec' and find the type of attack on your own. Cuz we grow like that.
 
 ## Features
 
