@@ -1,8 +1,8 @@
 # 🧨 Binary Exploitation Journey
 
->My strength doesn't come from anything but from "My Princess", who believes in me when I doubt myself, and never lets me doubt myself. I'm not good at binaries, I'm just good at making her proud of loving me, and binaries are just one way of doing that.
+>My strength doesn't come from anything but from "My Princess", who believes in me when I doubt myself, and never lets me doubt myself. To be honest I'm not good at binaries, I'm just good at making her proud of me, and binaries are just one way of doing that.
 
-> One locked year. Infinite growth.
+>One locked year. Infinite growth.
 
 >This repository documents every challenge I solve, every technique I learn, and every mistake I make along the way.
 
