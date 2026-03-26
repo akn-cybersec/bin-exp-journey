@@ -7,7 +7,12 @@
 ## Challenge Description
 
 A simple 64-bit buffer overflow where we need to call the `flag` function. A direct jump may crash due to stack misalignment, so we use a `ret` gadget to align the stack before calling `flag`.
+Okay so 64-bit binaries are weird. They need the stack to be lined up perfectly, like 16-byte aligned or whatever. When you just jump straight to the flag function, sometimes it crashes because the stack isn't ready. That's where ret comes in.
 
+'ret' is just an instruction that pops the next address and goes there. That's it. It does nothing else. So if you put a ret before your target, it pops the flag address, fixes the alignment, and then jumps to it clean. No crash. No headache.
+
+You can find one with r`op.find_gadget(['ret'])[0]`. Then just stuff it in your payload before the flag address. 
+To be very honest you can solve it without gadgets or ret, but for that you will need to use `nm`, `ghidra`, `pwndbg`, or anything like them to find addresses and then hardcode them, yeah, there's no PIE and addresses will remain same, but, I opted for something else, cuz that felt kinda plain, and I had some extra time so I tried something else. It's completely optional to use `ret` or hardcode them, I found `ret` kinda fun so used it.
 ## Vulnerability
 
 The program uses an unsafe read into a buffer, allowing us to overwrite the return address. On 64-bit systems, the stack must be 16-byte aligned when calling functions. A direct jump can crash if the alignment is off.
