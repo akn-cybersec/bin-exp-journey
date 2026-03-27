@@ -149,8 +149,7 @@ What this challenge taught me:
 | 15 | 2026-03-23 | 3 | Command injection via environment variable chaining, local variable overwrite with GDB offset calculation, and 64-bit shellcode injection using leaked buffer address with NOP sled |
 | 16 | 2026-03-24 | 2 | Canary brute force via byte-by-byte feedback loop and local variable overwrite with manual little-endian packing |
 | 17 | 2026-03-25 | 1 | Built an ELF protection scanner in C++ and automated format string leaks with Python + hex decoder pipeline |
-| 18 | 2026-03-26 | 3 | 
-Python import hijacking for privilege escalation, stack alignment with a single ret gadget for 64-bit ret2win, and game exploitation via crafted movement sequences |
+| 18 | 2026-03-26 | 3 | Python import hijacking for privilege escalation, stack alignment with a single ret gadget for 64-bit ret2win, and game exploitation via crafted movement sequences |
 > Updated regularly as I solve more.
 
 ---
