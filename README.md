@@ -150,6 +150,7 @@ What this challenge taught me:
 | 16 | 2026-03-24 | 2 | Canary brute force via byte-by-byte feedback loop and local variable overwrite with manual little-endian packing |
 | 17 | 2026-03-25 | 1 | Built an ELF protection scanner in C++ and automated format string leaks with Python + hex decoder pipeline |
 | 18 | 2026-03-26 | 3 | Python import hijacking for privilege escalation, stack alignment with a single ret gadget for 64-bit ret2win, and game exploitation via crafted movement sequences |
+| 19 | 2026-03-27 | 1 | Binary analysis via file, nm, checksec, and Ghidra for protection detection, offset calculation from buffer size and target value (0x90 - 0x15 = 0x7b), and ret2win with 40-byte offset, and learnt some basics of `RUST` |
 > Updated regularly as I solve more.
 
 ---
