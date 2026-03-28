@@ -1,1 +1,1 @@
-FAKE{format_string_success}
+FAKE{ROP_WORKED_GO_REMOTE!}
