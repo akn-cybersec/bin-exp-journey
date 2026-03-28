@@ -151,6 +151,7 @@ What this challenge taught me:
 | 17 | 2026-03-25 | 1 | Built an ELF protection scanner in C++ and automated format string leaks with Python + hex decoder pipeline |
 | 18 | 2026-03-26 | 3 | Python import hijacking for privilege escalation, stack alignment with a single ret gadget for 64-bit ret2win, and game exploitation via crafted movement sequences |
 | 19 | 2026-03-27 | 1 | Binary analysis via file, nm, checksec, and Ghidra for protection detection, offset calculation from buffer size and target value (0x90 - 0x15 = 0x7b), and ret2win with 40-byte offset, and learnt some basics of `RUST` |
+| 20 | 2026-03-28 | 1 | Full 32-bit ROP chain with manual gadget hunting, writing /bin/sh to .bss, setting registers for execve syscall, and calling int 0x80 |
 > Updated regularly as I solve more.
 
 ---
