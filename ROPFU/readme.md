@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A 32-bit binary with no win function, no libc leak, but a buffer overflow. We need to build a full ROP chain to write `/bin/sh` into memory and call `execve` via `int 0x80`. It was fun to do.
+A 32-bit binary with no win function, no libc leak, but a buffer overflow. We need to build a full ROP chain to write `/bin/sh` into memory and call `execve` via `int 0x80`. It was fun to do. I won't lie by saying: It was easy to do, it wasn't. 
 
 ## Vulnerability
 
