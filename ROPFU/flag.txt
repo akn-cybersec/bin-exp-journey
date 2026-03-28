@@ -1,0 +1,1 @@
+FAKE{format_string_success}
