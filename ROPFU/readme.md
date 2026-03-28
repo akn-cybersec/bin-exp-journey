@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A 32-bit binary with no win function, no libc leak, but a buffer overflow. We need to build a full ROP chain to write `/bin/sh` into memory and call `execve` via `int 0x80`. It was fun to do. I won't lie by saying: It was easy to do, it wasn't. 
+A 32-bit binary with no win function, no libc leak, but a buffer overflow. We need to build a full ROP chain to write `/bin/sh` into memory and call `execve` via `int 0x80`. It was fun to do. I won't lie by saying: It was easy to do, it wasn't. It's only strength was knowing where is the binary popping eax, and I tried to find it directly from pwn tools, and I was failing cuz there wasn't regular: `pop edx; ret`, so I used: `ROPgadget --binary vuln | grep "pop edx"`, and with the help of this I found: `0x080583b9 : pop edx ; pop ebx ; ret`, and this is what lead to the construction of everything else.
 
 ## Vulnerability
 
