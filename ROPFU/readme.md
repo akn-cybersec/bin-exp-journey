@@ -7,7 +7,7 @@
 ## Challenge Description
 
 A 32-bit binary with no win function, no libc leak, but a buffer overflow. We need to build a full ROP chain to write `/bin/sh` into memory and call `execve` via `int 0x80`. It was fun to do. I won't lie by saying: It was easy to do, it wasn't. It's only strength was knowing where is the binary popping eax, and I tried to find it directly from pwn tools, and I was failing cuz there wasn't regular: `pop edx; ret`, so I used: `ROPgadget --binary vuln | grep "pop edx"`, and with the help of this I found: `0x080583b9 : pop edx ; pop ebx ; ret`, and this is what lead to the construction of everything else.
-Take it as suggestion, I sometimes make fake flags in my directory just to see if my script works locally before trying it remotely on hard challenges, just to find leaks, offsets, and sometimes, hex gives us flag if we decode that, and to trace that fake flags or I may say remote flags are very very useful.
+Take it as suggestion, I sometimes make fake flags in my directory just to see if my script works locally before trying it remotely on hard challenges, just to find leaks, offsets, and sometimes, hex gives us flag if we decode that, and to trace that fake flags or I may say local flags are very very useful.
 ## Vulnerability
 
 The program uses an unsafe read into a buffer, allowing us to overwrite the return address and control execution flow.
