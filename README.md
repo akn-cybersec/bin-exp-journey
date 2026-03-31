@@ -154,6 +154,7 @@ What this challenge taught me:
 | 20 | 2026-03-28 | 1 | Full 32-bit ROP chain with manual gadget hunting, writing /bin/sh to .bss, setting registers for execve syscall, and calling int 0x80 |
 | 21 | 2026-03-29 | 0 | Made a CTF challenge |
 | 22 | 2026-03-30 | 0 | Developing CTFs/challenges for PWN (might post them later) |
+| 23 | 2026-03-30 | 1 | 20-second timed 32-bit ret2win with offset calculation via GDB disassembly and one-liner payload delivery |
 > Updated regularly as I solve more.
 
 ---
