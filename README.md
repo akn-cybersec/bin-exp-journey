@@ -155,6 +155,7 @@ What this challenge taught me:
 | 21 | 2026-03-29 | 0 | Made a CTF challenge |
 | 22 | 2026-03-30 | 0 | Developing CTFs/challenges for PWN (might post them later) |
 | 23 | 2026-03-30 | 1 | 20-second timed 32-bit ret2win with offset calculation via GDB disassembly and one-liner payload delivery |
+| 24 | 2026-03-30 | 3 | Heap overflow with GOT overwrite via safe_ptr manipulation, 20-byte offset calculation, and manual payload crafting using p32() for 32-bit addresses |
 > Updated regularly as I solve more.
 
 ---
