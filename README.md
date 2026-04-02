@@ -188,7 +188,7 @@ We suffer together, we grow together.
 
 ## 🏆 Current Streak
 
-🔥 **Day 25** – April 01, 2026
+🔥 **Day 25** – April 02, 2026
 
 > "Trust The Process!" – My Princess
 
