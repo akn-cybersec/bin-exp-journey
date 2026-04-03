@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A 64-bit binary with a buffer overflow vulnerability. No win function. No libc leak. No easy path. We must build a full ROP chain to write `/bin/sh` into memory and call `execve` via syscall. It took one day to be solved, but I learnt an amazing thing from this one. So, the binary uses: rand() to generate the number which we have to guess, and rand() gives same sequence of numbers everytime. For example the guess#1 was 84 everytime, and similarly, I generated pattern upto 50 guesses by writing selfsolve.c.
+A 64-bit binary with a buffer overflow vulnerability. No win function. No libc leak. No easy path. We must build a full ROP chain to write `/bin/sh` into memory and call `execve` via syscall. It took one day to be solved, but I learnt an amazing thing from this one. So, the binary uses: rand() to generate the number which we have to guess, and rand() gives same sequence of numbers everytime. For example the guess#1 was 84 everytime, and similarly, I generated pattern upto 50 guesses by writing selfsolve.c. Overall, challenge was kinda hard, like it took a lot of time to be solved and made me go back to the very basics, stack canary, and stack alignments. I learnt a lot, hope you also do!
 
 ## Vulnerability
 
