@@ -6,7 +6,7 @@
 
 ## Challenge Description
 
-A 64-bit binary with a buffer overflow vulnerability. No win function. No libc leak. No easy path. We must build a full ROP chain to write `/bin/sh` into memory and call `execve` via syscall.
+A 64-bit binary with a buffer overflow vulnerability. No win function. No libc leak. No easy path. We must build a full ROP chain to write `/bin/sh` into memory and call `execve` via syscall. It took one day to be solved, but I learnt an amazing thing from this one.
 
 ## Vulnerability
 
