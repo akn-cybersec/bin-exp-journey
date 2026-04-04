@@ -158,6 +158,7 @@ What this challenge taught me:
 | 24 | 2026-04-01 | 3 | Heap overflow with GOT overwrite via safe_ptr manipulation, 20-byte offset calculation, and manual payload crafting using p32() for 32-bit addresses |
 | 25 | 2026-04-02 | 0 | Solved a challenge from picoCTF, but couldn't just get the flag cuz I was hitting a wall. Will try to solve it again tomorrow |
 | 26 | 2026-04-03 | 1 | 4-bit ROP chain with manual gadget hunting, writing /bin/sh to .bss using mov [rsi], rax, setting up execve syscall (rax=59, rdi, rsi, rdx), and calling syscall — all without libc |
+| 27 | 2026-04-04 | 1 | TOCTOU race condition via symlink swapping between a user-owned fake file and root-owned flag file to bypass ownership check and read the flag |
 > Updated regularly as I solve more.
 
 ---
