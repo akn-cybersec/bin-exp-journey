@@ -159,6 +159,7 @@ What this challenge taught me:
 | 25 | 2026-04-02 | 0 | Solved a challenge from picoCTF, but couldn't just get the flag cuz I was hitting a wall. Will try to solve it again tomorrow |
 | 26 | 2026-04-03 | 1 | 4-bit ROP chain with manual gadget hunting, writing /bin/sh to .bss using mov [rsi], rax, setting up execve syscall (rax=59, rdi, rsi, rdx), and calling syscall — all without libc |
 | 27 | 2026-04-04 | 1 | TOCTOU race condition via symlink swapping between a user-owned fake file and root-owned flag file to bypass ownership check and read the flag |
+| 28 | 2026-04-05 | 0 | Working on a new tool |
 > Updated regularly as I solve more.
 
 ---
