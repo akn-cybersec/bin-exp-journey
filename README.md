@@ -160,6 +160,7 @@ What this challenge taught me:
 | 26 | 2026-04-03 | 1 | 4-bit ROP chain with manual gadget hunting, writing /bin/sh to .bss using mov [rsi], rax, setting up execve syscall (rax=59, rdi, rsi, rdx), and calling syscall — all without libc |
 | 27 | 2026-04-04 | 1 | TOCTOU race condition via symlink swapping between a user-owned fake file and root-owned flag file to bypass ownership check and read the flag |
 | 28 | 2026-04-05 | 0 | Working on a new tool |
+| 29 | 2026-04-06 | 0 | Writing a header to match the speed of C++, and syntax of python |
 > Updated regularly as I solve more.
 
 ---
