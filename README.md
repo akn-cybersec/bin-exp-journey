@@ -162,6 +162,7 @@ What this challenge taught me:
 | 28 | 2026-04-05 | 0 | Working on a new tool |
 | 29 | 2026-04-06 | 0 | Writing a header to match the speed of C++, and syntax of python |
 | 30 | 2026-04-07 | 1 | Fomrat sting+Stack overflow in one, with ASLR |
+| 31 | 2026-04-08 | 8 | Variavle control, and precision (can't post writeup pwn.college rules) |
 > Updated regularly as I solve more.
 
 ---
