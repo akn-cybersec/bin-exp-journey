@@ -163,6 +163,7 @@ What this challenge taught me:
 | 29 | 2026-04-06 | 0 | Writing a header to match the speed of C++, and syntax of python |
 | 30 | 2026-04-07 | 1 | Fomrat sting+Stack overflow in one, with ASLR |
 | 31 | 2026-04-08 | 2 | Variavle control, and precision (can't post writeup pwn.college rules) |
+| 32 | 2026-04-09 | 3 | Variavle control, and control hijack, ret2win (pwn.college can't share writeup, if wanna learn, mail me at: fict.0501@gmail.com) |
 > Updated regularly as I solve more.
 
 ---
