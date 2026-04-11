@@ -165,6 +165,7 @@ What this challenge taught me:
 | 31 | 2026-04-08 | 2 | Variavle control, and precision (can't post writeup pwn.college rules) |
 | 32 | 2026-04-09 | 3 | Variavle control, and control hijack, ret2win (pwn.college can't share writeup, if wanna learn, mail me at: fict.0501@gmail.com) |
 | 33 | 2026-04-10 | 2 | Ret2win |
+| 34 | 2026-04-11 | 1 | PIE (easy) |
 > Updated regularly as I solve more.
 
 ---
