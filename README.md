@@ -161,9 +161,9 @@ What this challenge taught me:
 | 27 | 2026-04-04 | 1 | TOCTOU race condition via symlink swapping between a user-owned fake file and root-owned flag file to bypass ownership check and read the flag |
 | 28 | 2026-04-05 | 0 | Working on a new tool |
 | 29 | 2026-04-06 | 0 | Writing a header to match the speed of C++, and syntax of python |
-| 30 | 2026-04-07 | 1 | Fomrat sting+Stack overflow in one, with ASLR |
+| 30 | 2026-04-07 | 1 | Fomrat string+Stack overflow in one, with ASLR |
 | 31 | 2026-04-08 | 2 | Variavle control, and precision (can't post writeup pwn.college rules) |
-| 32 | 2026-04-09 | 3 | Variavle control, and control hijack, ret2win (pwn.college can't share writeup, if wanna learn, mail me at: fict.0501@gmail.com) |
+| 32 | 2026-04-09 | 3 | Variable control, and control hijack, ret2win (pwn.college can't share writeup, if wanna learn, mail me at: fict.0501@gmail.com) |
 | 33 | 2026-04-10 | 2 | Ret2win |
 | 34 | 2026-04-11 | 1 | PIE (easy) |
 > Updated regularly as I solve more.
