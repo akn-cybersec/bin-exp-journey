@@ -166,6 +166,7 @@ What this challenge taught me:
 | 32 | 2026-04-09 | 3 | Variable control, and control hijack, ret2win (pwn.college can't share writeup, if wanna learn, mail me at: fict.0501@gmail.com) |
 | 33 | 2026-04-10 | 2 | Ret2win |
 | 34 | 2026-04-11 | 1 | PIE (easy) |
+| 35 | 2026-06-17 | 1 | Partial overwrite of the return address, leveraging page-aligned PIE (low 12 bits fixed) and calculating win offset from the runtime base via `p.libs()`  |
 > Updated regularly as I solve more.
 
 ---
@@ -197,7 +198,7 @@ We suffer together, we grow together.
 
 ## 🏆 Current Streak
 
-🔥 **Day 34** – April 11, 2026
+🔥 **Day 35** – June 17, 2026
 
 > "Trust The Process!" – My Princess
 
